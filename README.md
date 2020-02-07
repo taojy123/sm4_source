@@ -1,8 +1,26 @@
 ## SM4加解密算法
 
+### C#语言版本
+
+```c#
+static void Main(string[] args)
+{
+	String text = "125W34@89";
+	String key = "devzeng";
+	Console.WriteLine("[明文]: " + text + " -> " + key);
+	
+	String result1 = SM4Util.encrypt(text, key);
+	Console.WriteLine("[加密]: " + result1);
+	
+	String result2 = SM4Util.decrypt(result1, key);
+	Console.WriteLine("[解密]: " + result2);
+            
+	Console.ReadKey();
+}
+```
 ### C语言版本
 
-```
+```c
 int main(int argc, char **argv) {
     printf("-------SM4加解密使用流程-------\n");
     
@@ -30,7 +48,7 @@ int main(int argc, char **argv) {
 
 ### Java语言版本
 
-```
+```java
 public static void main(String[] args) {
 	String text = "125W34@89";
 	String key = "devzeng";
@@ -41,24 +59,5 @@ public static void main(String[] args) {
 		
 	String result2 = SM4Util.decrypt(result1, key);
 	System.out.println("[解密]: " + result2);
-}
-```
-
-### C#语言版本
-
-```
-static void Main(string[] args)
-{
-	String text = "125W34@89";
-	String key = "devzeng";
-	Console.WriteLine("[明文]: " + text + " -> " + key);
-	
-	String result1 = SM4Util.encrypt(text, key);
-	Console.WriteLine("[加密]: " + result1);
-	
-	String result2 = SM4Util.decrypt(result1, key);
-	Console.WriteLine("[解密]: " + result2);
-            
-	Console.ReadKey();
 }
 ```
